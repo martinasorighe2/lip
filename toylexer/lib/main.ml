@@ -23,5 +23,15 @@ let string_of_tokenlist tl =
 let string_of_frequencies fl =
   List.fold_left (fun s (t,n) -> s ^ ((string_of_token t) ^ " -> " ^ string_of_int n ^ "\n")) "" fl
 
+let rec aux x l =
+  match l with
+  [] -> 0
+  |hd::tl ->
+    if hd = x then 1 + aux x tl
+    else aux x tl;;
+
 (* frequency : int -> 'a list -> ('a * int) list *)
-let frequency _ _ = failwith("TODO")
+let rec frequency n l = 
+  match l with
+  [] -> []
+  |hd::tl -> (hd, aux hd l) :: frequency n tl
