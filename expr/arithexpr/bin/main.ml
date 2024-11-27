@@ -1,4 +1,5 @@
 open ArithexprLib.Main
+open ArithexprLib.Ast
   
 (* read file, and output it to a string *)
 
@@ -16,6 +17,10 @@ let read_line () =
 ;;
 
 (* print a result *)
+
+let string_of_val = function
+    Nat n -> string_of_int n
+  | Bool b -> string_of_bool b
 
 let print_val e = print_string (string_of_val e); print_newline();;
 
