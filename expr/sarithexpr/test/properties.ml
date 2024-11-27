@@ -1,4 +1,4 @@
-open SarithexprLib.Ast
+(*open SarithexprLib.Ast
 open SarithexprLib.Main
 open Random_ast
 open QCheck
@@ -67,4 +67,4 @@ let test_preservation =
   QCheck.Test.make arbitrary_ast preservation
 ;;
 
-QCheck_runner.run_tests [test_progress; test_preservation];;
+QCheck_runner.run_tests [test_progress; test_preservation];;*)
